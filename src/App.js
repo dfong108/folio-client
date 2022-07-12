@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
+
+import Header from './components/globals/Header';
+import Footer from './components/globals/Footer';
+
+import Home from './features/folio/Home';
+import AboutFolio from './features/folio/AboutFolio';
+
+import ArtistAdmin from './features/artists/ArtistAdmin';
+import ArtistDetail from './features/artists/ArtistDetail';
+import ArtistList from './features/artists/ArtistList';
+import GalleryDetail from './features/artists/GalleryDetail';
+import GalleryList from './features/artists/GalleryList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about_folio' element={<AboutFolio />} />
+
+          <Route path='/artists' element={<ArtistList />} />
+          <Route path='/artists/admin' element={<ArtistAdmin />} />
+          <Route path='/artists/:id' element={<ArtistDetail />} />
+          
+          <Route path='/galleries' element={<GalleryList />} />
+          <Route path='/galleries/:id' element={<GalleryDetail />} />
+
+        </Routes>
+      <Footer />
+    </>
   );
 }
 
