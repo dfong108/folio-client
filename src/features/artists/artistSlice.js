@@ -1,13 +1,93 @@
 import { createSlice, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
-import artist_seeds from '../seeds/artistSeeds';
+
+// ------------------------------------ SEEDS VVVVVV ------------------------------------
+
+// ------------------------------------ SEEDS VVVVVV ------------------------------------
+
+const sampleArtists = [
+    // -------------- VISUAL --------------
+    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    // -------------- MUSICIAN --------------
+    {name: 'Stevie Wonder', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Prince', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Beyonce', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Shakira', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Michael Jackson', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
+    // -------------- PERFORMER --------------
+    {name: 'Dave Chappelle', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Kevin Hart', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Denzel Washington', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Meryl Streep', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Viola Davis', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
+    // -------------- WRITER --------------
+    {name: 'Stephen King', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Enest Hemingway', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Mark Twain', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'J. K. Rowling', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Emily Dickinson', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
+    // -------------- CULINARY --------------
+    {name: 'Gordon Ramsay', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Anthony Bourdain', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Rachel Ray', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Cat Cora', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Julia Child', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
+]
+
+// --------------------------------------- FILL GALLERY ---------------------------------
+// --------------------------------------- FILL GALLERY ---------------------------------
+
+
+const artist_Seeds = sampleArtists.map(artist => {
+    for(let i = 0; i <= 5; i++) {
+        let random = () => Math.floor(Math.random() * 10)
+        let image = `https://source.unsplash.com/random/20${random()}x20${random()}`
+        artist.gallery.entries.push(image)
+    }
+    return artist
+})
+
+function getGalleries() {
+    let galleries = [];
+    sampleArtists.forEach((artist) => {
+        let gallery = artist.gallery
+        let newObj = {'gallery': gallery, "artist": artist}
+        galleries.push(newObj)
+    })
+    return galleries
+}
+
+// --------------------------------------- SORT BY TYPE ---------------------------------
+// --------------------------------------- SORT BY TYPE ---------------------------------
+
+function getTypes() {
+    let typesArray = []
+    sampleArtists.forEach(artist => {
+    if (!typesArray.includes(artist.artist_type)) {
+        typesArray.push(artist.artist_type)
+    }
+    })
+    return typesArray
+}
+
+
+
+// ------------------------------------ SEEDS ^^^^^^ ------------------------------------
+// ------------------------------------ SEEDS ^^^^^^ ------------------------------------
+
 
 const BASE_URL = 'http://localhost:8000/artists'
 
 const initialState = {
-    artists: [],
-    artistTypes: [],
-    galleries: [],
+    // artists: [],
+    artists: artist_Seeds,
+    artistTypes: getTypes(),
+    // galleries: [],
+    galleries: getGalleries(),
     loading: false,
     error: null
 }
@@ -61,7 +141,7 @@ export const deleteArtist = createAsyncThunk('artist/deleteArtist', async (artis
     const DELETE_URL = `${BASE_URL}/${id}`;
 
     try {
-        const response = await axios.delete(UPDATE_URL, artist)
+        const response = await axios.delete(DELETE_URL, artist)
         console.log('---------- DELETE THUNK ----------')
         return response
     } catch (error) {
@@ -120,7 +200,7 @@ export const allArtists = (state) => state.artist.artists;
 export const allGalleries = (state) => state.artist.galleries;
 export const artistTypes = (state) => state.artist.artistTypes;
 
-export const getArtistStatus = state.artist.loading;
+export const getArtistStatus = (state) => state.artist.loading;
 
 
 export default artistSlice.reducer;

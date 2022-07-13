@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from './components/globals/Header';
 import Footer from './components/globals/Footer';
 
-import Home from './features/folio/Home';
+import Home from './features/folio/Home.js';
 import AboutFolio from './features/folio/AboutFolio';
 
 import ArtistAdmin from './features/artists/ArtistAdmin';
@@ -14,7 +14,7 @@ import GalleryList from './features/artists/GalleryList';
 
 function App() {
   return (
-    <>
+    <div>
       <Header />
         <Routes>
           <Route path='/' element={<Home />} />
@@ -29,7 +29,7 @@ function App() {
 
         </Routes>
       <Footer />
-    </>
+    </div>
   );
 }
 
