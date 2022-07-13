@@ -17,7 +17,8 @@
     "react-lorem-ipsum": "^1.4.10",
     "react-redux": "^8.0.2",
     "@reduxjs/toolkit": "^1.8.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "react-icons": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

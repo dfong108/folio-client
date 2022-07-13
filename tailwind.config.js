@@ -36,9 +36,14 @@ module.exports = {
         purple:'#8338ec',
         hot_pink:'#ff006e',
       },
-      // fontFamily: {
-      //   'accent_font': ["Splash", "Sans-serif"]
-      // }
+      fontFamily: {
+        // 'accent_font': ["Splash", "Sans-serif"]
+        'accent': ['Mochiy Pop P One', 'sans-serif'],
+        monoton: "'Monoton', cursive",
+      },
+      rotate: {
+        '270': '270deg',
+      }
     },
   },
   plugins: [],

@@ -5,18 +5,16 @@ const DisplayContainer = ({ artistType, artists }) => {
 
 
   return (
-    <div className='grid grid-rows-auto grid-cols-12 md:grid-rows-4 space-x-3 justify-center text-center border rounded-sm sm:my-4'>
-        <div className='cols-span-2'>
-            <h3>{artistType}</h3>
-        </div>
-        <div className='sm:relative flex flex-wrap col-span-10 justify-between sm:my-4 bg-gray-100/20'>
+    // <div className='flex flex-wrap md:grid grid-rows-1 grid-cols-1 md:grid-cols-5 space-x-3 justify-center h-max my-3 rounded-sm text-center border'>
+    <div className='m-1 mt-7'>
+        <h3 className='mt-1 text-4xl tracking-widest'>{artistType}</h3>
+        <div className='flex flex-wrap space-x-3 justify-between h-max my-1 px-1 rounded-sm text-center border'>
             {
                 artists?.map(artist => (
-                    <DisplayCard key={artist.id} type={'artistCard'} artist={artist} />
+                    <DisplayCard key={artist.id} cardType={'artistCard'} artist={artist} />
                 ))
-            }
+            }        
         </div>
-
     </div>
   )
 }

@@ -4,6 +4,7 @@ import { allArtists, artistTypes } from './artistSlice';
 
 import HeroBanner from '../../components/HeroBanner';
 import DisplayContainer from '../../components/DisplayContainer';
+import { nanoid } from '@reduxjs/toolkit';
 
 const ArtistList = () => {
 
@@ -18,7 +19,7 @@ const ArtistList = () => {
 
 
   return (
-    <div>
+    <div className='flex flex-col min-h-screen w-full justify-center text-center'>
         <HeroBanner artists={artists} />
         {
           sortedByType.map((entry, i) => (
