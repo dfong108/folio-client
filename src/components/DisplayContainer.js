@@ -1,22 +1,53 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import DisplayCard from './DisplayCard';
 
-const DisplayContainer = ({ artistType, artists }) => {
+const DisplayContainer = ({ artistType, data, dataType }) => {
+  // ADD SLIDER EFFECT WITH STATE
+  const [scroll, setScroll] = useState()
+  const carousel = useRef()
 
-
-  return (
-    // <div className='flex flex-wrap md:grid grid-rows-1 grid-cols-1 md:grid-cols-5 space-x-3 justify-center h-max my-3 rounded-sm text-center border'>
-    <div className='m-1 mt-7'>
-        <h3 className='mt-1 text-4xl tracking-widest'>{artistType}</h3>
-        <div className='flex flex-wrap space-x-3 justify-between h-max my-1 px-1 rounded-sm text-center border'>
-            {
-                artists?.map(artist => (
-                    <DisplayCard key={artist.id} cardType={'artistCard'} artist={artist} />
-                ))
-            }        
+  useEffect(() => {
+    // console.log(carousel.current)
+  }, [])
+  
+  switch (dataType) {
+    case 'artists':
+      return (
+        // <div className='flex flex-wrap md:grid grid-rows-1 grid-cols-1 md:grid-cols-5 space-x-3 justify-center h-max my-3 rounded-sm text-center border'>
+        <div className='flex flex-col w-full m-1 mt-7 justify-center text-center'>
+            <h3 className='mt-1 text-4xl tracking-widest'>{artistType}</h3>
+            <div ref={carousel} className='carousel'>
+              <div className='inner-carousel flex space-x-2 overflow-hidden justify-between h-max my-1 p-3 rounded-md text-center border'>
+                  {
+                      data?.map(artist => (
+                          <DisplayCard key={artist.id} cardType={'artistCard'} artist={artist} />
+                      ))
+                  }        
+              </div>
+            </div>
         </div>
-    </div>
-  )
+      )
+    case 'galleries':
+      return (
+        // <div className='flex flex-wrap md:grid grid-rows-1 grid-cols-1 md:grid-cols-5 space-x-3 justify-center h-max my-3 rounded-sm text-center border'>
+        <div className='flex flex-col w-full m-1 mt-7 justify-center text-center'>
+            <h3 className='mt-1 text-4xl tracking-widest'>{artistType}</h3>
+            <div ref={carousel} className='carousel'>
+              <div className='inner-carousel flex space-x-2 overflow-hidden justify-between h-max my-1 p-3 rounded-md text-center border'>
+                  {
+                      data?.map(gallery => (
+                          <DisplayCard key={gallery.artist.id} cardType={'galleryCard'} artist={gallery.artist} />
+                      ))
+                  }        
+              </div>
+            </div>
+        </div>
+      ) 
+  
+    default:
+      break;
+  }
+
 }
 
 export default DisplayContainer

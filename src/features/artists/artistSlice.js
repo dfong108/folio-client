@@ -12,6 +12,11 @@ const sampleArtists = [
     {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
     // -------------- MUSICIAN --------------
     {name: 'Stevie Wonder', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Prince', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
@@ -36,6 +41,7 @@ const sampleArtists = [
     {name: 'Rachel Ray', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Cat Cora', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Julia Child', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Julia Child', date_created: new Date(), artist_type: 'rastarou', gallery: {title: '', entries: []}, id: nanoid()},
 ]
 
 // --------------------------------------- FILL GALLERY ---------------------------------
@@ -43,9 +49,9 @@ const sampleArtists = [
 
 
 const artist_Seeds = sampleArtists.map(artist => {
-    for(let i = 0; i <= 5; i++) {
+    for(let i = 0; i <= 10; i++) {
         let random = () => Math.floor(Math.random() * 10)
-        let image = `https://source.unsplash.com/random/20${random()}x20${random()}`
+        let image = `https://source.unsplash.com/random/24${random()}x24${random()}`
         artist.gallery.entries.push(image)
     }
     return artist
@@ -74,8 +80,30 @@ function getTypes() {
     return typesArray
 }
 
+function sortedArtists() {
+    let types = getTypes()
+    let sortedByType = []
+    types?.forEach((type, i) => {
+      let temp = sampleArtists.filter(artist => artist.artist_type === type)
+      sortedByType.push({'artist_type': type, 'artists': temp})
+    })
+    return sortedByType
+}
 
-
+function sortedGalleries() {
+    let types = getTypes();
+    let galleries = []
+    types.forEach((type, i) => {
+        let sortedGalleries = [];
+        let temp = sampleArtists.filter(artist => artist.artist_type === type)
+        temp.forEach((entry, i) => {
+            // galleries.push({'type': type, 'gallery': entry.gallery})
+            sortedGalleries.push({'artist': entry, 'gallery': entry.gallery})
+        })
+        galleries.push({'type': type, 'galleries': sortedGalleries})
+    })
+    return galleries
+}
 // ------------------------------------ SEEDS ^^^^^^ ------------------------------------
 // ------------------------------------ SEEDS ^^^^^^ ------------------------------------
 
@@ -85,9 +113,10 @@ const BASE_URL = 'http://localhost:8000/artists'
 const initialState = {
     // artists: [],
     artists: artist_Seeds,
+    sortedArtists: sortedArtists(),
     artistTypes: getTypes(),
-    // galleries: [],
     galleries: getGalleries(),
+    sortedGalleries: sortedGalleries(),
     loading: false,
     error: null
 }
@@ -197,8 +226,12 @@ export const artistSlice = createSlice({
 })
 
 export const allArtists = (state) => state.artist.artists;
-export const allGalleries = (state) => state.artist.galleries;
+export const artistsByType = (state) => state.artist.sortedArtists;
 export const artistTypes = (state) => state.artist.artistTypes;
+
+
+export const allGalleries = (state) => state.artist.galleries;
+export const galleriesByType = (state) => state.artist.sortedGalleries;
 
 export const getArtistStatus = (state) => state.artist.loading;
 

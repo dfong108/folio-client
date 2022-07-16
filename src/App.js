@@ -5,6 +5,7 @@ import Footer from './components/globals/Footer';
 
 import Home from './features/folio/Home.js';
 import AboutFolio from './features/folio/AboutFolio';
+import Signup from './features/folio/forms/Signup';
 
 import ArtistAdmin from './features/artists/ArtistAdmin';
 import ArtistDetail from './features/artists/ArtistDetail';
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about_folio' element={<AboutFolio />} />
+          <Route path='/signup' element={<Signup />} />
 
           <Route path='/artists' element={<ArtistList />} />
           <Route path='/artists/admin' element={<ArtistAdmin />} />

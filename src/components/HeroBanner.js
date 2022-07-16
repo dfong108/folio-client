@@ -1,10 +1,10 @@
 import React from 'react';
-import Banner_1 from '../assets/art_banner_1.jpg';
+import Banner_1 from '../assets/art-banner-1.jpg';
 
-const HeroBanner = () => {
+const HeroBanner = ({ data, message }) => {
   return (
     <div className='flex flex-col relative h-[50%] font-monoton'>
-      <h1 className='absolute text-9xl z-10 translate-y-[0%] pl-2 underline text-[300]'>Folio</h1>
+      <h1 className='absolute text-9xl z-10 translate-y-[0%] pl-2 underline text-[4rem] md:text-[6rem] lg:text-[8rem]'>{message || 'Folio'}</h1>
       <div className='absolute z-10 top-[80%] left-[60%] tracking-wider'>
         <p>Making art a buisness<br/>Making business an art</p>
       </div>

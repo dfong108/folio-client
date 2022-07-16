@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <div>
     
-      <div className='hidden md:flex w-full justify-between items-center text-center text-lg font-accent my-2 px-2 bg-black'>
+      <div className='hidden md:flex w-full justify-between items-center text-center text-lg font-accent my-2 px-2 bg-black z-10'>
       {/*  */}
       {/* Regular Nav */}
         <div className='flex w-[70%] justify-between px-2 py-2 bg-red'>
