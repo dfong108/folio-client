@@ -22,15 +22,14 @@ const SignUp = () => {
             artist_type: '',
             alias: '',
             about: '',
-            gallery: {title: '', entries: { name: '', images: [], description: '' } }
+            gallery: {title: '', description: '', entries: [ { name: '', files: [], description: '' } ] }
         },
         onSubmit: {},
     });
 
     const pageTitles = ["User Type", "General Info", "Artist Type", "Artist Bio",  "Make Gallery"]
+    // const textFieldStyles = 'rounded-md px-1 text-black lowercase h-[80%] w-full flex text-left items-start justify-start'
 
-    // console.log(formik.values)
-    console.log('page....', currentPage)
 
 
   return (
@@ -38,7 +37,7 @@ const SignUp = () => {
     // <div className='relative flex flex-col container w-full md:w-[70%] md:mx-auto md:translate-y-[20%] text-[1.5rem] md:text-[2rem] rounded-lg border-4 border-sand'>
     <div className='relative flex flex-col container w-full md:w-[70%] md:m-auto top-1 text-[1.5rem] md:text-[2rem] rounded-lg border-4 border-sand'>
         
-        <div className='w-full h-full p-8 space-y-10 z-10'>
+        <div className='w-full h-full p-8 space-y-10'>
             <h3>{pageTitles[currentPage]}</h3>
             <div className='section-wrapper h-full w-full items-center relative overflow-hidden'>
             {/* -------- SECTION ONE: USER TYPE -------- */}
@@ -47,22 +46,22 @@ const SignUp = () => {
                 </section>
 
             {/* -------- SECTION TWO: MAIN INFO -------- */}
-                <section className={currentPage === 1 ? 'section-two flex flex-col h-full w-full justify-center rounded-md bg-amber-700/80 border-4 border-black p-4' : 'hidden'}>
+                <section className={currentPage === 1 ? 'section-two flex flex-col h-full w-full justify-center rounded-md bg-violet-900/30 border-4 border-black p-4' : 'hidden'}>
                     <MainInfo values={formik.values} handleChange={formik.handleChange} currentPage={currentPage} />
                 </section>
 
             {/* -------- SECTION THREE: ARTIST TYPE -------- */}
-                <section className={currentPage === 2 ? 'section-three flex flex-col h-full w-full justify-center rounded-md bg-green-900/80 border-4 border-black p-4' : 'hidden'}>
+                <section className={currentPage === 2 ? 'section-three flex flex-col h-full w-full justify-center rounded-md bg-gray-900/80 border-4 border-black p-4' : 'hidden'}>
                     <ArtistType values={formik.values} handleChange={formik.handleChange} currentPage={currentPage} />
                 </section>
         
             {/* -------- SECTION FOUR: ARTIST INFO -------- */}
-                <section className={currentPage === 3 ? 'section-four flex flex-col h-full w-full justify-center rounded-md bg-gray-900/80 border-4 border-black p-4' : 'hidden'}>
+                <section className={currentPage === 3 ? 'section-four flex flex-col h-full w-full justify-center rounded-md bg-violet-900/30 border-4 border-black p-4' : 'hidden'}>
                     <ArtistDescription values={formik.values} handleChange={formik.handleChange} currentPage={currentPage} />
                 </section>
             
             {/* -------- SECTION FIVE: CREATE GALLERY -------- */}
-                <section className={currentPage === 4 ? 'section-five flex flex-col h-full w-full justify-center rounded-md bg-cyan-500 border-4 border-black p-4' : 'hidden'}>
+                <section className={currentPage === 4 ? 'section-five flex flex-col h-full w-full justify-center rounded-md bg-cyan-700/80 border-4 border-black p-4' : 'hidden'}>
                     <CreateGallery values={formik.values} handleChange={formik.handleChange} currentPage={currentPage} />
                 </section>
 
@@ -99,8 +98,8 @@ const SignUp = () => {
                 }
             </footer>
         </div>
-        <img src={Banner_2} alt="folio" className='z-0 absolute h-full w-full object-cover' />
-        <div className='absolute h-full w-full bg-gray-700/70'></div>
+        <div className='-z-10 absolute h-full w-full bg-gray-700/70'></div>
+        <img src={Banner_2} alt="folio" className='-z-20 absolute h-full w-full object-cover' />
     </div>
   )
 }

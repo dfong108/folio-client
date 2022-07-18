@@ -4,7 +4,6 @@ import { nanoid } from '@reduxjs/toolkit';
 
 const UserType = ({ values, currentPage, handleChange }) => {
     const[artist, setArtist] = React.useState(null)
-    console.log(values.isArtist)
 
   return (
     <form className='flex flex-col space-y-4'>

@@ -17,6 +17,17 @@ const sampleArtists = [
     {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    
+    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
     // -------------- MUSICIAN --------------
     {name: 'Stevie Wonder', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
     {name: 'Prince', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},

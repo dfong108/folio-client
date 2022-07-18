@@ -5,7 +5,6 @@ import { artistTypes } from '../../../artists/artistSlice';
 
 const ArtistType = ({ values, currentPage, handleChange }) => {
     
-    console.log(values)
     const types = useSelector(artistTypes);
 
     // artist_type
@@ -24,15 +23,15 @@ const ArtistType = ({ values, currentPage, handleChange }) => {
             <option defaultChecked value={null}>Select One</option>
           {
             types?.map((type, i) => (
-                <option value={type}>{type}</option>
+                <option key={i} value={type}>{type}</option>
               ))
             }
           </select>
 
-          <div className='flex space-x-2'>
+          {/* <div className='flex space-x-2'>
             other:
             <input onChange={handleChange} className='rounded-md px-1 text-black lowercase' type="text" id="other" name="artist_type" placeholder="add a different type"/>
-          </div>
+          </div> */}
 
       </div>
     </form>
