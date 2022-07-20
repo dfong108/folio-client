@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { nanoid } from '@reduxjs/toolkit';
 import { Form, Field, useFormik } from 'formik';
 import UserType from './artist_create/UserType.js';
 import  MainInfo from './artist_create/MainInfo.js';
@@ -22,7 +23,7 @@ const SignUp = () => {
             artist_type: '',
             alias: '',
             about: '',
-            gallery: {title: '', description: '', entries: [ { name: '', files: [], description: '' } ] }
+            gallery: {title: '', description: '', entries: [ { name: '', files: [], description: '', entry_id: nanoid() } ] }
         },
         onSubmit: {},
     });

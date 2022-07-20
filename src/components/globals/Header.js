@@ -13,20 +13,20 @@ const Header = () => {
 
 
   return (
-    <div>
+    <div className='mb-4'>
     
-      <div className='hidden md:flex w-full justify-between items-center text-center text-lg font-accent my-2 px-2 bg-black z-10'>
+      <div className='hidden md:flex w-full justify-end items-center text-center text-2xl tracking-wider mb-2 px-2 bg-black z-10'>
       {/*  */}
       {/* Regular Nav */}
-        <div className='flex w-[70%] justify-between px-2 py-2 bg-red'>
-          <Link className='cursor-pointer m-0' to={'/'}>Home</Link>
-          <Link className='cursor-pointer m-0' to={'/artists/'}>Artists</Link>
-          <Link className='cursor-pointer m-0' to={'/galleries/'}>Galleries</Link>
-          <Link className='cursor-pointer m-0' to={'/shop/'}>Shop</Link>
+        <div className='flex w-[70%] justify-end px-2  pr-10 bg-rose-700/40'>
+          <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/'}>Home</Link>
+          <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/artists/'}>Artists</Link>
+          <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/galleries/'}>Galleries</Link>
+          <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/shop/'}>Shop</Link>
         </div>
       {/* User Info */}
         <div>
-          <Link to={'/signup'}><p className='cursor-pointer'>Sign Up</p></Link>
+          <Link to={'/signup'}><p className='cursor-pointer px-2  hover:bg-gray-200/20'>Sign Up</p></Link>
         </div>
 
       </div>

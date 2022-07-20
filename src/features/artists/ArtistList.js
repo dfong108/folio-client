@@ -9,7 +9,7 @@ import { nanoid } from '@reduxjs/toolkit';
 const ArtistList = () => {
 
     const sortedArtists = useSelector(artistsByType)
-
+    console.log(sortedArtists[0].artists[0])
     const message = "Artists"
 
   return (

@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk, nanoid } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { AiTwotoneStar } from 'react-icons/ai';
 
 // ------------------------------------ SEEDS VVVVVV ------------------------------------
 
@@ -7,52 +8,53 @@ import axios from 'axios';
 
 const sampleArtists = [
     // -------------- VISUAL --------------
-    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     
-    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Vincent van Gogh', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Leonardo da Vinci', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jackson Pollock', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Andy Warhol', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Jean-Michel Basquiat', date_created: new Date(), artist_type: 'visual', gallery: {title: '', entries: []}, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- MUSICIAN --------------
-    {name: 'Stevie Wonder', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Prince', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Beyonce', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Shakira', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Michael Jackson', date_created: new Date(), artist_type: 'musician', gallery: {title: '', entries: []}, id: nanoid()},
+    {first_name: 'Stevie', last_name: 'Wonder', about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Prince',  last_name: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Beyonce', last_name: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Shakira', last_name: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Michael', last_name: 'Jackson', about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- PERFORMER --------------
-    {name: 'Dave Chappelle', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Kevin Hart', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Denzel Washington', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Meryl Streep', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Viola Davis', date_created: new Date(), artist_type: 'performer', gallery: {title: '', entries: []}, id: nanoid()},
+    {first_name: 'Dave', last_name: 'Chappelle', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Kevin', last_name: 'Hart', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Denzel', last_name: 'Washington', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Meryl', last_name: 'Streep', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Viola', last_name: 'Davis', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- WRITER --------------
-    {name: 'Stephen King', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Enest Hemingway', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Mark Twain', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'J. K. Rowling', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Emily Dickinson', date_created: new Date(), artist_type: 'writer', gallery: {title: '', entries: []}, id: nanoid()},
+    {first_name: 'Stephen', last_name: 'King', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Enest', last_name: 'Hemingway', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Mark', last_name: 'Twain', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'J. K.', last_name: 'Rowling', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Emily', last_name: 'Dickinson', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- CULINARY --------------
-    {name: 'Gordon Ramsay', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Anthony Bourdain', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Rachel Ray', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Cat Cora', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Julia Child', date_created: new Date(), artist_type: 'culinary', gallery: {title: '', entries: []}, id: nanoid()},
-    {name: 'Julia Child', date_created: new Date(), artist_type: 'rastarou', gallery: {title: '', entries: []}, id: nanoid()},
+    {first_name: 'Gordon', last_name: 'Ramsay', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Anthony', last_name: 'Bourdain', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Rachel', last_name: 'Ray', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Cat', last_name: 'Cora', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Julia', last_name: 'Child', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    // {first_name: 'Julia', last_name: 'Child', about: "", artist_type: 'rastarou', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    // {first_name: 'Julia', last_name: 'Child', about: "", artist_type: 'rastarou', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
 ]
 
 // --------------------------------------- FILL GALLERY ---------------------------------
@@ -60,10 +62,26 @@ const sampleArtists = [
 
 
 const artist_Seeds = sampleArtists.map(artist => {
-    for(let i = 0; i <= 10; i++) {
-        let random = () => Math.floor(Math.random() * 10)
-        let image = `https://source.unsplash.com/random/24${random()}x24${random()}`
-        artist.gallery.entries.push(image)
+    artist.about = `${artist.first_name} is a ${artist.artist_type} with a great knack for his/her craft. Check out his/her gallery!`
+    var { gallery } = artist
+    gallery.title = `${artist.first_name}'s Gallery`;
+    gallery.description = "This is an awesome gallery that brings out the best in all of the things that I care about."
+    
+    let random = () => Math.floor(Math.random() * 10)
+    
+    for(let j = 0; j < 4; j++) {
+        let newTitle = `Entry Title ${j}`
+        let image_1 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_2 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_3 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_4 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_5 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_6 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let desc = "I'm very excited to bring this new level of professionalism to you!!"
+
+        let newEntry = {title: `Entry #${j + 1}`, files: [image_1, image_2, image_3,image_4, image_5, image_6], description: desc, entry_id: nanoid()}
+
+        gallery.entries.push(newEntry)
     }
     return artist
 })
@@ -117,17 +135,25 @@ function sortedGalleries() {
 }
 // ------------------------------------ SEEDS ^^^^^^ ------------------------------------
 // ------------------------------------ SEEDS ^^^^^^ ------------------------------------
+// ------------------------------------ SEEDS ^^^^^^ ------------------------------------
+// ------------------------------------ SEEDS ^^^^^^ ------------------------------------
+// ------------------------------------ SEEDS ^^^^^^ ------------------------------------
+// ------------------------------------ SEEDS ^^^^^^ ------------------------------------
 
 
 const BASE_URL = 'http://localhost:8000/artists'
 
 const initialState = {
-    // artists: [],
     artists: artist_Seeds,
     sortedArtists: sortedArtists(),
+    selectedArtist: {},
+
     artistTypes: getTypes(),
     galleries: getGalleries(),
     sortedGalleries: sortedGalleries(),
+
+    selectedGalleryEntry: {},
+
     loading: false,
     error: null
 }
@@ -193,6 +219,10 @@ export const deleteArtist = createAsyncThunk('artist/deleteArtist', async (artis
 
 // ------------------------------------ SLICE ------------------------------------
 // ------------------------------------ SLICE ------------------------------------
+// ------------------------------------ SLICE ------------------------------------
+// ------------------------------------ SLICE ------------------------------------
+// ------------------------------------ SLICE ------------------------------------
+// ------------------------------------ SLICE ------------------------------------
 
 
 export const artistSlice = createSlice({
@@ -208,6 +238,25 @@ export const artistSlice = createSlice({
         filterGalleriesByArtist: (state, action) => {
 
         },
+        selectArtist: (state, action) => {
+            console.log('--- FIND ARTIST ---')
+            const {artistID} = action.payload
+            const found = state.artists.filter(artist => artist.id === artistID)[0]
+            state.selectedArtist = found
+            console.log(found)
+        },
+        selectGalleryEntry: (state, action) => {
+            if(action.payload === null) {
+                state.selectedGalleryEntry = null
+                return
+            };
+
+            const {artist, entry_id} = action.payload
+            const selected = artist.gallery.entries.filter(entry => entry.entry_id === entry_id)[0];
+            state.selectedGalleryEntry = selected
+            console.log("SELECT ENTRY")
+        },
+
     },
     extraReducers(builder) {
         builder
@@ -236,15 +285,18 @@ export const artistSlice = createSlice({
     }
 })
 
+export const { selectArtist, selectGalleryEntry } = artistSlice.actions;
+
 export const allArtists = (state) => state.artist.artists;
+export const foundArtist = (state) => state.artist.selectedArtist
 export const artistsByType = (state) => state.artist.sortedArtists;
 export const artistTypes = (state) => state.artist.artistTypes;
+export const getArtistStatus = (state) => state.artist.loading;
 
 
 export const allGalleries = (state) => state.artist.galleries;
 export const galleriesByType = (state) => state.artist.sortedGalleries;
-
-export const getArtistStatus = (state) => state.artist.loading;
+export const selectedEntry = (state) => state.artist.selectedGalleryEntry
 
 
 export default artistSlice.reducer;
