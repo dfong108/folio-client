@@ -8,62 +8,67 @@ import { AiTwotoneStar } from 'react-icons/ai';
 
 const sampleArtists = [
     // -------------- VISUAL --------------
-    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     
-    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Vincent van', last_name: 'Gogh', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Leonardo da', last_name: 'Vinci', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jackson', last_name: 'Pollock', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Andy', last_name: 'Warhol', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Jean-Michel', last_name: 'Basquiat', about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Vincent van', last_name: 'Gogh', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Leonardo da', last_name: 'Vinci', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jackson', last_name: 'Pollock', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Andy', last_name: 'Warhol', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Jean-Michel', last_name: 'Basquiat', alias: "", password: "", email: "", about: "", artist_type: 'visual', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- MUSICIAN --------------
-    {first_name: 'Stevie', last_name: 'Wonder', about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Prince',  last_name: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Beyonce', last_name: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Shakira', last_name: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Michael', last_name: 'Jackson', about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Stevie', last_name: 'Wonder', alias: "", password: "", email: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Prince',  last_name: "", alias: "", password: "", email: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Beyonce', last_name: "", alias: "", password: "", email: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Shakira', last_name: "", alias: "", password: "", email: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Michael', last_name: 'Jackson', alias: "", password: "", email: "", about: "", artist_type: 'musician', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- PERFORMER --------------
-    {first_name: 'Dave', last_name: 'Chappelle', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Kevin', last_name: 'Hart', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Denzel', last_name: 'Washington', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Meryl', last_name: 'Streep', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Viola', last_name: 'Davis', about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Dave', last_name: 'Chappelle', alias: "", password: "", email: "", about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Kevin', last_name: 'Hart', alias: "", password: "", email: "", about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Denzel', last_name: 'Washington', alias: "", password: "", email: "", about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Meryl', last_name: 'Streep', alias: "", password: "", email: "", about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Viola', last_name: 'Davis', alias: "", password: "", email: "", about: "", artist_type: 'performer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- WRITER --------------
-    {first_name: 'Stephen', last_name: 'King', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Enest', last_name: 'Hemingway', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Mark', last_name: 'Twain', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'J. K.', last_name: 'Rowling', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Emily', last_name: 'Dickinson', about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Stephen', last_name: 'King', alias: "", password: "", email: "", about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Enest', last_name: 'Hemingway', alias: "", password: "", email: "", about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Mark', last_name: 'Twain', alias: "", password: "", email: "", about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'J. K.', last_name: 'Rowling', alias: "", password: "", email: "", about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Emily', last_name: 'Dickinson', alias: "", password: "", email: "", about: "", artist_type: 'writer', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
     // -------------- CULINARY --------------
-    {first_name: 'Gordon', last_name: 'Ramsay', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Anthony', last_name: 'Bourdain', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Rachel', last_name: 'Ray', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Cat', last_name: 'Cora', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    {first_name: 'Julia', last_name: 'Child', about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    // {first_name: 'Julia', last_name: 'Child', about: "", artist_type: 'rastarou', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
-    // {first_name: 'Julia', last_name: 'Child', about: "", artist_type: 'rastarou', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Gordon', last_name: 'Ramsay', alias: "", password: "", email: "", about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Anthony', last_name: 'Bourdain', alias: "", password: "", email: "", about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Rachel', last_name: 'Ray', alias: "", password: "", email: "", about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Cat', last_name: 'Cora', alias: "", password: "", email: "", about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    {first_name: 'Julia', last_name: 'Child', alias: "", password: "", email: "", about: "", artist_type: 'culinary', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    // {first_name: 'Julia', last_name: 'Child', alias: "", password: "", email: "", about: "", artist_type: 'rastarou', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
+    // {first_name: 'Julia', last_name: 'Child', alias: "", password: "", email: "", about: "", artist_type: 'rastarou', gallery: {title: '', description: '', entries: [] }, id: nanoid()},
 ]
 
 // --------------------------------------- FILL GALLERY ---------------------------------
 // --------------------------------------- FILL GALLERY ---------------------------------
 
+const nickNames = ['Diesel', 'Sizzle', 'Meister', 'Blizzy', 'Drizzy']
 
 const artist_Seeds = sampleArtists.map(artist => {
     artist.about = `${artist.first_name} is a ${artist.artist_type} with a great knack for his/her craft. Check out his/her gallery!`
     var { gallery } = artist
+    artist.alias = artist.first_name.split("", 1)[0] + nickNames[Math.floor(Math.random() * nickNames.length)]
+    let noSpace = artist.first_name.split(' ').join('')
+    artist.email = `${noSpace}@gmail.com`
+    artist.password = `${artist.last_name}${artist.artist_type}`
     gallery.title = `${artist.first_name}'s Gallery`;
     gallery.description = "This is an awesome gallery that brings out the best in all of the things that I care about."
     
@@ -77,9 +82,13 @@ const artist_Seeds = sampleArtists.map(artist => {
         let image_4 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
         let image_5 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
         let image_6 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_7 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_8 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_9 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
+        let image_10 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
         let desc = "I'm very excited to bring this new level of professionalism to you!!"
 
-        let newEntry = {title: `Entry #${j + 1}`, files: [image_1, image_2, image_3,image_4, image_5, image_6], description: desc, entry_id: nanoid()}
+        let newEntry = {title: `Entry #${j + 1}`, files: [image_1, image_2, image_3,image_4, image_5, image_6, image_7, image_8, image_9, image_10], description: desc, entry_id: nanoid()}
 
         gallery.entries.push(newEntry)
     }

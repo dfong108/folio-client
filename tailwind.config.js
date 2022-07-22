@@ -32,9 +32,10 @@ module.exports = {
         red:'#d62828',
         orange:'#f77f00',
         yellow:'#fcbf49',
-        sand:'#eae2b7',
         purple:'#8338ec',
         hot_pink:'#ff006e',
+        sand:'#eae2b7',
+        iconHL: '#7209b7',
       },
       fontFamily: {
         // 'accent_font': ["Splash", "Sans-serif"]

@@ -15,13 +15,19 @@ const DisplayContainer = ({ artistType, data, dataType }) => {
     case "artists":
       return (
         // <div className='flex flex-wrap md:grid grid-rows-1 grid-cols-1 md:grid-cols-5 space-x-3 justify-center h-max my-3 rounded-sm text-center border'>
-        <div className="flex flex-col md:w-full m-1 mt-7 justify-center text-center">
-          <h3 className="mt-1 text-4xl tracking-widest">{artistType}</h3>
+        <div className="flex flex-col md:w-full m-1 justify-center text-center">
           <div
             ref={carousel}
-            className="carousel block md:flex justify-center  bg-red"
+            className="carousel block md:flex justify-center rounded-md border bg-gray-900"
           >
-            <div className="relative inner-carousel bg-green-600 block md:flex space-x-2 overflow-hidden my-1 p-3 rounded-md text-center border">
+            <div className="flex justify-center items-center md:w-10 p-2">
+              <h3 className=" text-4xl mb-0 tracking-widest text-amber-400/60 md:rotate-[270deg]">
+                {artistType}
+              </h3>
+            </div>
+            <div
+              className="inner-carousel bg-black flex justify-between space-x-2 overflow-y-scroll my-1 p-3 w-full rounded-md text-center border"
+            >
               {data?.map((artist) => (
                 <DisplayCard
                   key={artist.id}
@@ -56,11 +62,10 @@ const DisplayContainer = ({ artistType, data, dataType }) => {
     case "galleryEntries":
       return (
         // <div className='flex flex-wrap md:grid grid-rows-1 grid-cols-1 md:grid-cols-5 space-x-3 justify-center h-max my-3 rounded-sm text-center border'>
-        <div className="container flex flex-col w-full h-full p-1 justify-center text-center border-2 rounded-md bg-black">
-          {/* <h3 className="mt-1 text-4xl tracking-widest">{data.gallery.title}</h3> */}
-          <h3 className="mt-1 text-4xl tracking-widest">Gallery</h3>
-          <div ref={carousel} className="container carousel">
-            <div className="container inner-carousel flex flex-col overflow-hidden justify-between h-max my-1 p-3 space-y-4 rounded-md text-center border">
+        <div className="md:container sm:px-2 flex flex-col w-full h-full md:p-1 justify-center md:text-center border-2 rounded-md bg-black">
+          <h3 className="mt-1 md:py-3 md:text-4xl tracking-widest">Gallery</h3>
+          <div ref={carousel} className="md:container carousel">
+            <div className="md:container sm:p-2 inner-carousel flex md:flex-col overflow-x-scroll justify-between h-max my-1 md:p-3 md:space-y-4 rounded-md text-center border">
               {data.gallery.entries.map((entry) => (
                 // <h2>{entry.title}</h2>
                 <DisplayCard

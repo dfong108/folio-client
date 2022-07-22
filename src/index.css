@@ -34,3 +34,15 @@ body {
     /* font-family: 'Monoton', cursive; */
   }
 }
+
+@layer components {
+  .form_input_half {
+    @apply w-[50%] p-2 m-2 rounded-md text-xl font-sans font-semibold text-black
+  }
+  .form_section_title {
+    @apply w-full m-4 font-monoton md:text-[2.5rem] md:tracking-widest
+  }
+
+}
+
+

@@ -4,12 +4,6 @@ import { nanoid } from '@reduxjs/toolkit';
 
 const MainInfo = ({ values, currentPage, handleChange }) => {
 
-  // console.log(values)
-  
-  // first_name
-  // last_name
-  // email
-  // password
 
   return (
     <form>
