@@ -91,7 +91,7 @@ const SignUp = () => {
                     ) : (
                         <button 
                             type='submit' 
-                            className='w-40 border-2 border-black text-black  bg-green-600 hover:bg-green-200 9ounded-md'
+                            className='w-40 border-2 border-black text-black  bg-green-900/75 hover:bg-green-200 rounded-md'
                             onClick={formik.handleReset}
                             disabled={currentPage === pageTitles.length - 1}
                         >Submit</button>

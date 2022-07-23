@@ -88,7 +88,7 @@ const artist_Seeds = sampleArtists.map(artist => {
         let image_10 = {url: `https://source.unsplash.com/random/24${random()}x24${random()}`, public_id: nanoid()}
         let desc = "I'm very excited to bring this new level of professionalism to you!!"
 
-        let newEntry = {title: `Entry #${j + 1}`, files: [image_1, image_2, image_3,image_4, image_5, image_6, image_7, image_8, image_9, image_10], description: desc, entry_id: nanoid()}
+        let newEntry = {title: `Entry #${j + 1}`, files: [image_1, image_2, image_3,image_4, image_5, image_6, image_7, image_8, image_9], description: desc, entry_id: nanoid()}
 
         gallery.entries.push(newEntry)
     }
@@ -186,6 +186,7 @@ export const getArtists = createAsyncThunk('artist/getArtists', async () => {
     try {
         const response = await axios.get(BASE_URL)
         console.log('---------- GET THUNK ----------')
+        console.log(response)
         return response
     } catch (error) {
         return(error.message)
@@ -200,9 +201,10 @@ export const updateArtist = createAsyncThunk('artist/updateArtist', async (artis
     const UPDATE_URL = `${BASE_URL}/${id}`;
     
     try {
+        console.log('---------- UPDATE ARTIST ----------')
         const response = await axios.put(UPDATE_URL, artist)
-        console.log('---------- UPDATE THUNK ----------')
-        return response
+        console.log(response)
+        // return response
     } catch (error) {
         return(error.message)
     }

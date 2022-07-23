@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import { useSelector, useDispatch } from "react-redux";
-import { allArtists, artistTypes } from "./artistSlice";
+import { allArtists, artistTypes, updateArtist } from "./artistSlice";
 import EditGallery from "./EditGallery";
 
 import { FaUserCircle } from "react-icons/fa";
@@ -10,7 +10,6 @@ import { BsFillChatLeftTextFill } from "react-icons/bs";
 import { SiRedhat } from "react-icons/si";
 import { BsFillPaletteFill } from "react-icons/bs";
 import { AiFillShopping } from "react-icons/ai";
-
 
 const nullForm = {
   isArtist: null,
@@ -29,34 +28,44 @@ const nullForm = {
 };
 
 const ArtistAdmin = () => {
+  const dispatch = useDispatch();
   const artist = useSelector(allArtists)[0];
   const types = useSelector(artistTypes);
   const [artistData, setArtistData] = useState(artist);
   const [showSection, setShowSection] = useState("Main Info");
 
   useEffect(() => {
+    console.log("--- ARTIST DATA RELOADED ---")
     console.log(artistData);
-  }, [artistData])
+  }, [artistData]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    
+
     if (value === null) {
       setArtistData({ ...artistData, [name]: artistData[name] });
-      return
+      return;
     }
 
-    if(name.split('.')[0] === 'gallery') {
-      let target = name.split('.')[1]
-      let tempGallery = artistData.gallery
-      tempGallery = {...tempGallery, [target]: value}
-      setArtistData({...artistData, gallery : tempGallery})
-      console.log(artistData)
-      return
+    if (name.split(".")[0] === "gallery") {
+      let target = name.split(".")[1];
+      let tempGallery = artistData.gallery;
+      tempGallery = { ...tempGallery, [target]: value };
+      setArtistData({ ...artistData, gallery: tempGallery });
+      console.log(artistData);
+      return;
     }
 
     setArtistData({ ...artistData, [name]: value });
   };
+
+  const handleSaveArtistData = (e) => {
+    e.preventDefault();
+    console.log(artistData)
+    dispatch(updateArtist(artistData))
+  }
+
+
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-12 md:grid-rows-4 min-h-screen mx-auto w-[98vw] h-full justify-center text-center">
@@ -206,6 +215,15 @@ const ArtistAdmin = () => {
               />
             </label>
           </div>
+          <div>
+            <button
+              type="submit"
+              className="w-40 border-2 border-black text-black text-2xl  bg-green-400/75 hover:bg-green-600 rounded-md"
+              onClick={(e) => handleSaveArtistData(e)}
+            >
+              Submit
+            </button>
+          </div>
         </section>
         {/* --------- ARTIST INFO -------- */}
         <section
@@ -218,7 +236,7 @@ const ArtistAdmin = () => {
           <h1 className="form_section_title">{showSection}</h1>
           {/* --- Artist Type --- */}
           <label
-            htmlFor="artistData.artist_type"
+            htmlFor="artist_type"
             className="flex justify-between p-2 mx-20"
           >
             <div className="w-full bg-gray-500/20 text-3xl mt-4 text-black rounded-xl">
@@ -278,7 +296,6 @@ const ArtistAdmin = () => {
               />
             </div>
           </label>
-
         </section>
         {/* --------- MANAGE GALLERY -------- */}
         <section
@@ -291,10 +308,12 @@ const ArtistAdmin = () => {
           <h1 className="form_section_title">{showSection}</h1>
 
           <div className="flex flex-col px-10 text- w-[95%] h-[80%] bg-gray-500/40 border rounded">
-            <EditGallery artistData={artistData} setArtistData={setArtistData} handleInputChange={handleInputChange} />
+            <EditGallery
+              artistData={artistData}
+              setArtistData={setArtistData}
+              handleInputChange={handleInputChange}
+            />
           </div>
-
-
         </section>
         {/* --------- MANAGE SHOP -------- */}
         <section

@@ -19,12 +19,15 @@ const EditGallery = ({ artistData, currentPage, setArtistData, handleInputChange
 
   
   useEffect((entries) => {
-    updateEntries();
-  }, [galleryEntries])
+    setGalleryEntries(artistData.gallery.entries)
+    // updateEntries();
+  }, [])
 
   function updateEntries () {
-    entries = galleryEntries
-    console.log(entries)
+    let tempGal = artistData.gallery
+    tempGal = {...tempGal, entries: galleryEntries}
+    setArtistData({...artistData, gallery: tempGal})
+    console.log("--- UPDATE GALLERY ENTRIES ---")
     console.log(galleryEntries)
   }
 
@@ -41,8 +44,7 @@ const EditGallery = ({ artistData, currentPage, setArtistData, handleInputChange
     newGal.splice(targetIndex, 1, targetEntry)
     setGalleryEntries(newGal)
 
-    setMessage('--- FIELD UPDATE ---')
-    console.log(message)
+    console.log('--- FIELD UPDATE ---')
     console.log(galleryEntries)
     console.log(entries)
   };
@@ -67,7 +69,7 @@ const EditGallery = ({ artistData, currentPage, setArtistData, handleInputChange
     console.log(entries);
   };
 
-  const handleAddFiles = useCallback((event, entry) => {
+  const handleAddFiles = useCallback((event, index, entry) => {
     const cloudinary_url = process.env.REACT_APP_CLOUDINARY_URL;
     const upload_preset = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
     const { files } = event.target;
@@ -102,19 +104,25 @@ const EditGallery = ({ artistData, currentPage, setArtistData, handleInputChange
     });
   }, [galleryEntries]);
 
-  const handleRemoveFile = (entry, file_id) => {
+  const handleRemoveFile = (entry, index, file_id) => {
     const newFiles = entry.files.filter(file => file.public_id != file_id)
-    let newGal =  galleryEntries;
-
+    // console.log(newFiles)
     const newEntry = {...entry, files: newFiles}
-    const newEntryIndex = newGal.indexOf(entry)
-    newGal.splice(newEntryIndex, 1, newEntry)
-    setGalleryEntries(() => newGal)
+    // console.log(newEntry.files)
+    // console.log(galleryEntries)
+    let temp = entries.filter(x => x != entry)
+    // temp = temp.splice(index, 0, newEntry)
+    console.log(temp)
+    let newEntriesArr = temp.splice(2, 0, newEntry)
+    console.log(newEntriesArr)
 
-    setMessage('--- FILE REMOVED ---')
-    console.log(message)
-    console.log(galleryEntries)
-    console.log(entries)
+    // newEntriesArr.splice(index, 1, newEntry)
+    // setGalleryEntries(newEntriesArr)
+
+    // setMessage('--- FILE REMOVED ---')
+    // console.log(message)
+    // console.log(galleryEntries[index])
+    // console.log(entries)
   }
 
 
@@ -165,15 +173,16 @@ const EditGallery = ({ artistData, currentPage, setArtistData, handleInputChange
       </div>
 {/* ----- ENTRIES ----- */}
       <div className="flex  p-2 text-black space-x-10 overflow-scroll">
-        {entries?.map((entry, index) => (
+        {artistData.gallery.entries?.map((entry, index) => (
           <div key={entry.entry_id} className="space-y-4 flex flex-col min-w-[100%] max-h-[100%] p-2 border-4 rounded-md bg-cyan-50/20">
       {/* ------ ENTRY NAME ------ */}
             <label htmlFor="title">
               <span>{entry.title}</span>
               <input
                 type="text"
-                name="name"
-                placeholder="name of exhibit"
+                name="title"
+                value={entry.title}
+                placeholder="Exhibit title"
                 className="rounded-md px-1 text-black lowercase h-[80%] w-full flex text-left items-start justify-start"
                 onChange={(e) => handleEntryFields(e, entry.entry_id)}
               />
@@ -182,29 +191,30 @@ const EditGallery = ({ artistData, currentPage, setArtistData, handleInputChange
             <label htmlFor="description">
               <textarea
                 name="description"
+                value={entry.description}
                 placeholder="Exhibit description"
                 className="rounded-md px-1 text-black lowercase h-[80%] w-full flex text-left items-start justify-start"
                 onChange={(e) => handleEntryFields(e, entry.entry_id)}
               />
             </label>
       {/* ------ ADD FILES ------ */}
-            <label htmlFor={`gallery.entries.${index}.files`} className="">
+            <label htmlFor="files" className="">
               <input
                 type="file"
                 multiple
-                name={`gallery.entries.${index}.files`}
+                name="files"
                 accept="image/*, .doc, .pdf"
                 onChange={(event) => handleAddFiles(event, entry)}
               />
       {/* ------ PREVIEW / REMOVE FILES ------ */}
-              <div className="flex flex-wrap justify-evenly container w-full bg-gray-400/50 rounded-md">
+              <div className="flex flex-wrap justify-start  container w-full p-2 bg-gray-400/50 rounded-md">
                 {entry.files.map((file) => (
                   <div
                     key={file.public_id}
                     className="relative m-1 cursor-pointer "
                   >
                     <div 
-                      onClick={() => handleRemoveFile(entry, file.public_id)}
+                      onClick={() => handleRemoveFile(entry, index, file.public_id)}
                       className="absolute left-[85%] hover:left-[80%] -top-2 hover:-top-3 text-white z-10 p-1 hover:p-2 font-bold rounded-full border-1 hover:border-black hover:bg-red bg-gray-900/80">
                       <AiOutlineClose size={20} />
                     </div>
