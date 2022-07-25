@@ -33,6 +33,10 @@ body {
     font-family: 'Bebas Neue', cursive;
     /* font-family: 'Monoton', cursive; */
   }
+  input {
+    @apply font-sans font-semibold
+  }
+
 }
 
 @layer components {

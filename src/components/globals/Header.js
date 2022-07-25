@@ -23,6 +23,7 @@ const Header = () => {
           <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/artists/'}>Artists</Link>
           <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/galleries/'}>Galleries</Link>
           <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/shop/'}>Shop</Link>
+          <Link className='cursor-pointer m-0 px-6 hover:bg-gray-500/20' to={'/artists/admin'}>Admin</Link>
         </div>
       {/* User Info */}
         <div>

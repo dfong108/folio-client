@@ -69,7 +69,7 @@ const ArtistAdmin = () => {
 
   return (
     <div className="flex flex-col md:grid md:grid-cols-12 md:grid-rows-4 min-h-screen mx-auto w-[98vw] h-full justify-center text-center">
-      {/* --------- SIDEBAR -------- */}
+      {/* --------- TOP BAR -------- */}
       <div className="container flex flex-col w-full md:h-full md:col-start-1 md:col-end-3 md:row-span-full p-1 justify-center text-center border-2 rounded-md bg-black">
         <h3 className="mt-1 text-4xl tracking-widest">Settings</h3>
         <aside className="flex md:flex-col h-full">
@@ -265,7 +265,7 @@ const ArtistAdmin = () => {
             className="flex justify-between p-2 mx-20"
           >
             <div className="w-full bg-gray-500/20 text-3xl mt-4 text-black rounded-xl">
-              <span className="text-[2rem]">What type of artist art you?</span>
+              <span className="text-[2rem]">Do you have an alias?</span>
               Do you have an alias?
               <input
                 type="text"

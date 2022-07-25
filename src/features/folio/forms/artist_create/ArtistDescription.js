@@ -4,7 +4,7 @@ const ArtistDescription = ({ values, currentPage, handleChange }) => {
 
 
   return (
-    <form className='flex flex-col space-y-2'>
+    <div className='flex flex-col space-y-2'>
         <div className='flex flex-col w-full'>
             <label>
                 Do you have an alias?
@@ -17,7 +17,7 @@ const ArtistDescription = ({ values, currentPage, handleChange }) => {
                 <textarea onChange={handleChange} type="textarea" id="artist_description" name="about" placeholder='biography...' className='rounded-md px-1 text-black lowercase h-full w-full flex text-left items-start justify-start'/>
             </label>
         </div>
-    </form>
+    </div>
   )
 }
 

@@ -9,21 +9,23 @@ import { AiOutlineClose } from "react-icons/ai";
 const galleryShape = [ { name: "", files: [], description: "", entry_id: nanoid() } ];
 
 
-const CreateGallery = ({ values, currentPage, handleChange }) => {
+const CreateGallery = ({ values, formik_errors, currentPage, handleChange }) => {
+  // console.log(formik_errors)
   const [message, setMessage] = useState("")
   const [galleryEntries, setGalleryEntries] = useState(galleryShape);
   const [filesLoaded, setFilesLoaded] = useState(false);
   var { entries } = values.gallery;
 
   
-  useEffect((entries) => {
+  useEffect(() => {
     updateEntries();
   }, [galleryEntries])
 
   function updateEntries () {
-    entries = galleryEntries
     console.log(entries)
     console.log(galleryEntries)
+    console.log(values.gallery)
+    values.gallery.entries = galleryEntries
   }
 
   const handleEntryFields = (event, id) => {
@@ -42,7 +44,7 @@ const CreateGallery = ({ values, currentPage, handleChange }) => {
     setMessage('--- FIELD UPDATE ---')
     console.log(message)
     console.log(galleryEntries)
-    console.log(entries)
+    console.log(values.gallery.entries)
   };
 
   const handleAddEntry = () => {
@@ -92,6 +94,7 @@ const CreateGallery = ({ values, currentPage, handleChange }) => {
           console.log('---- FILE ADDED ---')
           console.log(entry.files);
           console.log(galleryEntries)
+          console.log(values.gallery.entries)
         });
         setFilesLoaded((prev) => !prev)
     });
@@ -114,7 +117,7 @@ const CreateGallery = ({ values, currentPage, handleChange }) => {
 
 
   return (
-    <form>
+    <div>
       <div className="py-4 text-black">
         <label
           htmlFor="gallery.title"
@@ -231,7 +234,7 @@ const CreateGallery = ({ values, currentPage, handleChange }) => {
           </div>
         ))}
       </div>
-    </form>
+    </div>
   );
 };
 

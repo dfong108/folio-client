@@ -12,7 +12,7 @@ const ArtistType = ({ values, currentPage, handleChange }) => {
     // about
 
   return (
-    <form className='text-center'>
+    <div className='text-center'>
           <h1 className='text-[2.5rem] mb-4'>Which of the following best describes your art?</h1>
 
       <div className='flex justify-around m-2 space-x-3 w-full'>
@@ -34,7 +34,7 @@ const ArtistType = ({ values, currentPage, handleChange }) => {
           </div> */}
 
       </div>
-    </form>
+    </div>
   )
 }
 

@@ -20,6 +20,7 @@ import { BsFillShareFill } from "react-icons/bs";
 const ArtistDetail = () => {
   const dispatch = useDispatch();
   const [artist, setArtist] = useState(null);
+  const [showImage, setShowImage] = useState(null);
   const [entries, setEntries] = useState(null);
   const { id } = useParams();
   const found = useSelector(foundArtist);
@@ -112,10 +113,10 @@ const ArtistDetail = () => {
                 <h1 className="flex w-full md:m-2 md:mb-0 font-monoton md:text-[3rem]">
                   {entrySelected?.title}
                 </h1>
-                <div className="container bg-gray-600 flex flex-wrap justify-evenly h-full md:min-h-[80%] w-full p-[0.1rem] overflow-y-scroll border rounded-md">
+                <div className="container bg-gray-600 flex flex-wrap justify-start h-full md:min-h-[80%] w-full p-[0.1rem] px-auto overflow-y-scroll border rounded-md">
                   {entrySelected?.files.map((file) => (
                     <div
-                      className="relative md:h-[30%] md:w-[25%] h-40 w-40 md:m-3 rounded-md overflow-hidden border-2 border-black shadow-2xl shadow-zinc-800/60"
+                      className="relative md:h-[10rem] md:w-[10rem] h-40 w-40 md:m-3 rounded-md overflow-hidden border-2 border-black shadow-2xl shadow-zinc-800/60"
                       key={file.id}
                     >
                       <div className="absolute w-full h-full bg-gray-800/30 hover:bg-gray-100/10 z-10"></div>
