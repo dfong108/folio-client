@@ -28,7 +28,7 @@ const DisplayCard = ({ cardType, artist, data, entryArtist }) => {
               <div className=" z-20 mx-auto text-xl md:text-[1.8rem] md:py-2 w-full bg-gray-900/75 ">
                 <h1>{fullname}</h1>
               </div>
-              <div className=" absolute w-full h-full bg-gray-900/40 hover:bg-zinc-300/10 z-10"></div>
+              <div className=" absolute w-full h-full bg-gray-900/30 hover:bg-zinc-300/10 z-10"></div>
               <img
                 className=" absolute object-fill z-0"
                 src={artist.gallery.entries[0].files[0].url}
