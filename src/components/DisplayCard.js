@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -38,7 +38,6 @@ const DisplayCard = ({ cardType, artist, data, entryArtist }) => {
           </div>
         </Link>
       );
-      break;
 
     case "galleryCard":
       return (
@@ -46,7 +45,6 @@ const DisplayCard = ({ cardType, artist, data, entryArtist }) => {
           <h1>Gallery Card</h1>
         </div>
       );
-      break;
 
     case "galleryEntryCard":
       return (
@@ -67,7 +65,7 @@ const DisplayCard = ({ cardType, artist, data, entryArtist }) => {
             {/* <div className=" z-20 mx-auto text-xl md:text-4xl w-full bg-gray-900/75 "> */}
               <h1>{data.title}</h1>
             </div>
-            <div className=" absolute w-full h-full bg-gray-900/40 hover:bg-gray-100/10 z-10"></div>
+            <div className=" absolute w-full h-full bg-gray-900/30 hover:bg-gray-100/10 z-10"></div>
             <img
               className=" absolute object-fill z-0"
               src={data.files[0].url}
@@ -76,8 +74,9 @@ const DisplayCard = ({ cardType, artist, data, entryArtist }) => {
           </div>
         </div>
       );
-      break;
-  }
+    
+    default: return
+    }
 };
 
 export default DisplayCard;
