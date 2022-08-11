@@ -30,8 +30,8 @@ body {
 @layer base {
   body {
     /* font-family: 'Mochi Pop P One', sans-serif; */
-    font-family: 'Bebas Neue', cursive;
-    /* font-family: 'Monoton', cursive; */
+    /* font-family: 'Bebas Neue', cursive; */
+    font-family: 'Monoton';
   }
   input {
     @apply font-sans font-semibold

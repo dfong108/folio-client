@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+// import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  allArtists,
+  // allArtists,
   foundArtist,
   selectedEntry,
   selectGalleryEntry,
@@ -20,9 +20,9 @@ import { BsFillShareFill } from "react-icons/bs";
 const ArtistDetail = () => {
   const dispatch = useDispatch();
   const [artist, setArtist] = useState(null);
-  const [showImage, setShowImage] = useState(null);
+  // const [showImage, setShowImage] = useState(null);
   const [entries, setEntries] = useState(null);
-  const { id } = useParams();
+  // const { id } = useParams();
   const found = useSelector(foundArtist);
   const entrySelected = useSelector(selectedEntry);
   const fullname = `${artist?.first_name} ${artist?.last_name}`;
@@ -120,7 +120,7 @@ const ArtistDetail = () => {
                       key={file.id}
                     >
                       <div className="absolute w-full h-full bg-gray-800/30 hover:bg-gray-100/10 z-10"></div>
-                      <img className="absolute object-cover" src={file.url} />
+                      <img className="absolute object-cover" src={file.url} alt={entrySelected.artist.first_name} />
                     </div>
                   ))}
                 </div>

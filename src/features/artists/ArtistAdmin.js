@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
-import { nanoid } from "@reduxjs/toolkit";
+import React, { useState, useEffect } from "react";
+// import { nanoid } from "@reduxjs/toolkit";
 
 import { useSelector, useDispatch } from "react-redux";
 import { allArtists, artistTypes, updateArtist } from "./artistSlice";
@@ -11,21 +11,21 @@ import { SiRedhat } from "react-icons/si";
 import { BsFillPaletteFill } from "react-icons/bs";
 import { AiFillShopping } from "react-icons/ai";
 
-const nullForm = {
-  isArtist: null,
-  first_name: "",
-  last_name: "",
-  email: "",
-  password: "",
-  artist_type: "",
-  alias: "",
-  about: "",
-  gallery: {
-    title: "",
-    description: "",
-    entries: [{ name: "", files: [], description: "", entry_id: nanoid() }],
-  },
-};
+// const nullForm = {
+//   isArtist: null,
+//   first_name: "",
+//   last_name: "",
+//   email: "",
+//   password: "",
+//   artist_type: "",
+//   alias: "",
+//   about: "",
+//   gallery: {
+//     title: "",
+//     description: "",
+//     entries: [{ name: "", files: [], description: "", entry_id: nanoid() }],
+//   },
+// };
 
 const ArtistAdmin = () => {
   const dispatch = useDispatch();

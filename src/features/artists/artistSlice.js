@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, nanoid } from "@reduxjs/toolkit";
 import axios from "axios";
-import Cookies from "js-cookie";
-import { AiTwotoneStar } from "react-icons/ai";
+// import Cookies from "js-cookie";
+// import { AiTwotoneStar } from "react-icons/ai";
 
 // ------------------------------------ SEEDS VVVVVV ------------------------------------
 
@@ -445,7 +445,7 @@ const artist_Seeds = sampleArtists.map((artist) => {
   let random = () => Math.floor(Math.random() * 10);
 
   for (let j = 0; j < 4; j++) {
-    let newTitle = `Entry Title ${j}`;
+    // let newTitle = `Entry Title ${j}`;
     let image_1 = {
       url: `https://source.unsplash.com/random/24${random()}x24${random()}`,
       public_id: nanoid(),
@@ -482,10 +482,7 @@ const artist_Seeds = sampleArtists.map((artist) => {
       url: `https://source.unsplash.com/random/24${random()}x24${random()}`,
       public_id: nanoid(),
     };
-    let image_10 = {
-      url: `https://source.unsplash.com/random/24${random()}x24${random()}`,
-      public_id: nanoid(),
-    };
+
     let desc =
       "I'm very excited to bring this new level of professionalism to you!!";
 
@@ -584,7 +581,7 @@ const initialState = {
 
 // ------------------------------------ CREATE ------------------------------------
 // ------------------------------------ CREATE ------------------------------------
-const crsftoken = Cookies.get("csrftoken");
+// const crsftoken = Cookies.get("csrftoken");
 export const createArtist = createAsyncThunk(
   "artist/createArtist",
   async (newArtist) => {

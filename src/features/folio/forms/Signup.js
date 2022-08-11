@@ -4,7 +4,7 @@ import { createArtist } from "../../artists/artistSlice.js";
 
 import { nanoid } from "@reduxjs/toolkit";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+// import * as Yup from "yup";
 import UserType from "./artist_create/UserType.js";
 import MainInfo from "./artist_create/MainInfo.js";
 import ArtistType from "./artist_create/ArtistType.js";
@@ -163,7 +163,7 @@ const SignUp = () => {
             </button>
           )}
           {/* --- NEXT / SUBMIT BUTTON --- */}
-          {currentPage != pageTitles.length - 1 ? (
+          {currentPage !== pageTitles.length - 1 ? (
             <button
               type="button"
               className="w-40 border-2 border-black text-black  bg-gray-200/90 hover:bg-cyan-300 rounded-md"
